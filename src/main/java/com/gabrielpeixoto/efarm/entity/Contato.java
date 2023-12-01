@@ -13,7 +13,7 @@ import lombok.Data;
 public class Contato {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String contato;
 
     @Column(nullable = false, length = 3)
     private Integer ddd;

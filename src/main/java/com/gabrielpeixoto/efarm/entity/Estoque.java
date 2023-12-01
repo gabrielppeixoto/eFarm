@@ -1,5 +1,9 @@
 package com.gabrielpeixoto.efarm.entity;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -7,7 +11,18 @@ import java.util.Map;
  * @author Gabriel Peixoto
  */
 
+@Data
+@Entity
 public class Estoque {
-    private String id;
-    Map<Produto, Integer> produtos;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String estoque;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "produtos_estoque",
+            joinColumns = @JoinColumn(name = "estoque"),
+            inverseJoinColumns = @JoinColumn(name = "produto")
+    )
+    List<Produto> produtos;
 }

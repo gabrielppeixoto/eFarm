@@ -13,7 +13,7 @@ import lombok.Data;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String endereco;
 
     @Column(name = "tipo_logradouro")
     @Enumerated(value = EnumType.STRING)
