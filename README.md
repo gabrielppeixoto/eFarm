@@ -9,5 +9,7 @@ Sistema de busca de medicamentos
 - Bootstrap
 
 ## Execução do projeto
-`git clone https://github.com/gabrielppeixoto/efarm  
-mvn install `
+1) git clone https://github.com/gabrielppeixoto/efarm
+2) cd efarm/
+3) docker compose up
+4) mvn install 
